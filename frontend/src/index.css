@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Exo+2:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { font-family: 'Exo 2', sans-serif; }
+  * { box-sizing: border-box; }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 40%, #2dd4bf 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-cyan {
+    background: linear-gradient(90deg, #06b6d4 0%, #38bdf8 50%, #7dd3fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .glow-blue {
+    box-shadow: 0 0 30px rgba(14,165,233,0.4), 0 0 60px rgba(14,165,233,0.15), 0 0 100px rgba(14,165,233,0.05);
+  }
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(6,182,212,0.3), 0 0 40px rgba(6,182,212,0.1);
+  }
+  .glow-teal {
+    box-shadow: 0 0 25px rgba(45,212,191,0.25);
+  }
+  .glow-text {
+    text-shadow: 0 0 30px rgba(56,189,248,0.6), 0 0 60px rgba(14,165,233,0.3);
+  }
+  .ocean-grid {
+    background-image:
+      linear-gradient(rgba(14,165,233,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(14,165,233,0.04) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  .depth-bg {
+    background: radial-gradient(ellipse 120% 80% at 50% 100%, rgba(14,165,233,0.08) 0%, rgba(2,5,16,0) 60%),
+                radial-gradient(ellipse 60% 40% at 20% 80%, rgba(6,182,212,0.06) 0%, transparent 50%),
+                radial-gradient(ellipse 40% 30% at 80% 20%, rgba(45,212,191,0.04) 0%, transparent 40%);
+  }
+  .scanline::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(14,165,233,0.01) 2px,
+      rgba(14,165,233,0.01) 4px
+    );
+    pointer-events: none;
+  }
+  .border-glow {
+    border-color: rgba(14,165,233,0.3);
+    box-shadow: inset 0 0 20px rgba(14,165,233,0.03), 0 0 20px rgba(14,165,233,0.08);
+  }
+  .panel {
+    background: rgba(7,15,32,0.8);
+    border: 1px solid rgba(13,31,60,0.8);
+    backdrop-filter: blur(12px);
+  }
+  .panel-hover:hover {
+    background: rgba(7,15,32,0.95);
+    border-color: rgba(14,165,233,0.25);
+    box-shadow: 0 0 20px rgba(14,165,233,0.06);
+  }
+  .tag {
+    background: rgba(14,165,233,0.1);
+    border: 1px solid rgba(14,165,233,0.2);
+    color: #38bdf8;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    padding: 3px 8px;
+    border-radius: 3px;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, #0ea5e9, #0284c7);
+    border: 1px solid rgba(56,189,248,0.3);
+    box-shadow: 0 0 20px rgba(14,165,233,0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+  }
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    box-shadow: 0 0 30px rgba(14,165,233,0.5), inset 0 1px 0 rgba(255,255,255,0.15);
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    background: rgba(14,165,233,0.05);
+    border: 1px solid rgba(14,165,233,0.2);
+    color: #38bdf8;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+  }
+  .btn-ghost:hover {
+    background: rgba(14,165,233,0.12);
+    border-color: rgba(14,165,233,0.4);
+    box-shadow: 0 0 15px rgba(14,165,233,0.1);
+  }
+  .input-field {
+    background: rgba(5,13,26,0.8);
+    border: 1px solid rgba(13,31,60,0.9);
+    color: #e2e8f0;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    transition: all 0.2s;
+  }
+  .input-field:focus {
+    outline: none;
+    border-color: rgba(14,165,233,0.5);
+    box-shadow: 0 0 0 2px rgba(14,165,233,0.1), inset 0 0 10px rgba(14,165,233,0.03);
+  }
+  .sonar-ring {
+    border: 1px solid rgba(14,165,233,0.3);
+    border-radius: 50%;
+    animation: sonar 3s ease-out infinite;
+  }
+  .sonar-ring-2 {
+    border: 1px solid rgba(14,165,233,0.2);
+    border-radius: 50%;
+    animation: sonar 3s ease-out infinite 1s;
+  }
+  .sonar-ring-3 {
+    border: 1px solid rgba(14,165,233,0.1);
+    border-radius: 50%;
+    animation: sonar 3s ease-out infinite 2s;
+  }
+}
