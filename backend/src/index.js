@@ -503,5 +503,10 @@ const ok = await testConnection();
 if (!ok) {
   console.warn('MySQL not reachable. Run: npm run db:migrate after fixing .env credentials.');
 }
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () =>
+    console.log(`SpendLens API running on :${PORT}`)
+  );
+}
 
-app.listen(PORT, () => console.log(`SpendLens API running on :${PORT}`));
+export default app;
